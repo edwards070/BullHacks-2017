@@ -221,7 +221,7 @@ label start:
     p1 "Nothing could possibly go wrong!"
     show Bernie normal at left
     with move
-    show Theresa normal at center
+    show Theresa normal at right
     p2 "Ahaha! It is I, Theresa May."
     with move
     show Theresa blush at right
