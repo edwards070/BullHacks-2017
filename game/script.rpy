@@ -248,6 +248,7 @@ label Bernie:
     python:
         ui.add(PongDisplayable())
         winner = ui.interact(suppress_overlay=True, suppress_underlay=True)
+    stop music
     play sound "game_over.mp3"
     show winner
     with fade
