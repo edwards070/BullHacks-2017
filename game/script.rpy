@@ -216,6 +216,22 @@ image winner = "winner.png"
 label start:
     scene bg oval
 
+    menu:
+        "Choose your character."
+        "Bernie Sanders":
+            jump Bernie
+        "Theresa May":
+            jump Theresa
+
+label Theresa:
+    show Theresa normal
+    with fade
+    "Unfortunately, you have chosen to play as Theresa May."
+    "We honestly didn't expect anyone to choose this option, so there's nothing here."
+    "Please feel free to go back and pick Bernie Sanders."
+    return
+
+label Bernie:
     show Bernie normal
     with fade
     p1 "Ah, what a lovely day in the White House as President of the United States of America."
