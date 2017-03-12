@@ -201,16 +201,22 @@ init:
 define b = Character("Bernie Sanders")
 define m = Character("Theresa May")
 define t = Character("Donald Trump")
+define k = Character("Kim Jong-Un")
+define v = Character("Vladimir Putin")
 
 
 # Define images
 image bg oval = "OO.jpg"
-image Sanders normal = "bernie head transparent.png"
-image Sanders blush = "bernie head blush.png"
-image Trump normal = "Donald Trump.png"
-# image Trump blush = ""
-image May normal = "maaay.png"
-# image May blush = ""
+image Sanders normal = "bs-normal.png"
+image Sanders blush = "bs-blush.png"
+image Trump normal = "dt-normal.png"
+# image Trump blush = "dt-blush.png"
+image May normal = "tm-normal.png"
+# image May blush = "tm-blush.png"
+# image Kim normal = "kju-normal.png"
+# image Kim blush = "kju-blush.png"
+# image Putin normal = "vp-normal.png"
+# image Putin blush = "vp-blush.png"
 
 
 # The game starts here.
@@ -225,6 +231,10 @@ label start:
             jump maystart
         "Donald Trump":
             jump donaldstart
+        "Kim Jong-Un":
+            jump kimstart
+        "Vladimir Putin":
+            jump putinstart
 
 label donaldstart:
     show Trump normal
@@ -236,6 +246,8 @@ label donaldstart:
     python:
         ui.add(PongDisplayable())
         winner = ui.interact(suppress_overlay=True, suppress_underlay=True)
+        # if winner = donald, play us_anthem.mp3
+        # if winner = random, play random_anthem.mp3
     return
 
 label berniestart:
@@ -251,7 +263,10 @@ label berniestart:
     python:
         ui.add(PongDisplayable())
         winner = ui.interact(suppress_overlay=True, suppress_underlay=True)
+        # if winner = bernie, play us_anthem.mp3
+        # if winner = random, play random_anthem.mp3
     return
+    exit
 
 label maystart:
     show May normal
@@ -259,4 +274,29 @@ label maystart:
     python:
         ui.add(PongDisplayable())
         winner = ui.interact(suppress_overlay=True, suppress_underlay=True)
+        # if winner = may, play uk_anthem.mp3
+        # if winner = random, play random_anthem.mp3
     return
+    exit
+
+label kimstart:
+    show May normal
+    with fade
+    python:
+        ui.add(PongDisplayable())
+        winner = ui.interact(suppress_overlay=True, suppress_underlay=True)
+        # if winner = kim, play nk_anthem.mp3
+        # if winner = random, play random_anthem.mp3
+    return
+    exit
+
+label putinstart:
+    show May normal
+    with fade
+    python:
+        ui.add(PongDisplayable())
+        winner = ui.interact(suppress_overlay=True, suppress_underlay=True)
+        # if winner = putin, play ru_anthem.mp3
+        # if winner = random, play random_anthem.mp3
+    return
+    exit
