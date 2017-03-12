@@ -228,3 +228,8 @@ game/saves
 game/saves/*
 game/saves/persistent
 log.txt
+game/cache/bytecode.rpyb
+game/cache/screens.rpyb
+*.save
+game/saves/persistent
+traceback.txt
