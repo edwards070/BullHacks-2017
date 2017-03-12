@@ -214,3 +214,15 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+# RenPy
+.idea/*
+.idea
+errors.txt
+log.txt
+traceback.txt
+game/cache/*
+game/cache
+game/saves/*
+game/saves
+game/saves/*
