@@ -222,10 +222,11 @@ label start:
     show Bernie normal at left
     with move
     show Theresa normal at right
-    p2 "Ahaha! It is I, Theresa May."
+    p2 "A-ha! It is I, Theresa May - queen of the right-wing and slayer of the poor."
     with move
     show Theresa blush at right
-    p2 "Britain will take back control of the USA and I will rule over you with an iron fist!"
+    p2 "I will steal your nuclear launch codes and destroy your filthy liberal society!"
+    play sound "boxing_bell.mp3"
     play music "us_anthem.mp3"
     python:
         ui.add(PongDisplayable())
