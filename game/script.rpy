@@ -208,6 +208,7 @@ image Bernie normal = "bs-normal.png"
 image Bernie blush = "bs-blush.png"
 image Theresa normal = "tm-normal.png"
 image Theresa blush = "tm-blush.png"
+image winner = "winner.png"
 
 
 
@@ -221,17 +222,21 @@ label start:
     p1 "Nothing could possibly go wrong!"
     show Bernie normal at left
     with move
-    show Theresa normal at right
-    p2 "A-ha! It is I, Theresa May - queen of the right-wing and slayer of the poor."
-    with move
     show Theresa blush at right
+    p2 "Ahaha! It is I, Theresa May."
     p2 "I will steal your nuclear launch codes and destroy your filthy liberal society!"
-    play sound "boxing_bell.mp3"
+    hide Bernie normal
+    hide Theresa blush
+    window hide
     play music "us_anthem.mp3"
     python:
         ui.add(PongDisplayable())
         winner = ui.interact(suppress_overlay=True, suppress_underlay=True)
     play sound "game_over.mp3"
-        # if winner = bernie, play us_anthem.mp3
-        # if winner = random, play random_anthem.mp3
+    show winner
+    with fade
+    p1 "Bernie wins!"
+    show winner
+    with fade
+    p1 "Remember kids, Bernie Sanders always wins."
     return
