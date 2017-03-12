@@ -17,8 +17,8 @@ init:
                 # Some displayables we use.
                 self.paddle = Image("pong.png")
                 self.ball = Image("pong_ball.png")
-                self.player = Text(_("Bernie Sanders"), size=36)
-                self.thedonald = Text(_("Theresa May"), size=36)
+                self.player = Text(_("Player 1"), size=36)
+                self.thedonald = (_("Player 2"), size=36)
                 self.ctb = Text(_("Click to Begin"), size=36)
 
                 # The sizes of some of the images.
@@ -226,14 +226,24 @@ label start:
 
     menu:
         "Bernie Sanders":
+            self.player = Text(_("Bernie Sanders"), size=36)
+            self.thedonald = Text(_("Donald Trump"), size=36)
             jump berniestart
         "Theresa May":
+            self.player = Text(_("Theresa May"), size=36)
+            self.thedonald = Text(_("Kim Jong-Un"), size=36)
             jump maystart
         "Donald Trump":
+            self.player = Text(_("Donald Trump"), size=36)
+            self.thedonald = Text(_("Vladimir Putin"), size=36)
             jump donaldstart
         "Kim Jong-Un":
+            self.player = Text(_("Kim Jong-Un"), size=36)
+            self.thedonald = Text(_("Vladimir Putin"), size=36)
             jump kimstart
         "Vladimir Putin":
+            self.player = Text(_("Vladimir Putin"), size=36)
+            self.thedonald = Text(_("Theresa May"), size=36)
             jump putinstart
 
 label donaldstart:
@@ -266,7 +276,6 @@ label berniestart:
         # if winner = bernie, play us_anthem.mp3
         # if winner = random, play random_anthem.mp3
     return
-    exit
 
 label maystart:
     show May normal
@@ -277,7 +286,6 @@ label maystart:
         # if winner = may, play uk_anthem.mp3
         # if winner = random, play random_anthem.mp3
     return
-    exit
 
 label kimstart:
     show May normal
@@ -288,7 +296,6 @@ label kimstart:
         # if winner = kim, play nk_anthem.mp3
         # if winner = random, play random_anthem.mp3
     return
-    exit
 
 label putinstart:
     show May normal
@@ -299,4 +306,3 @@ label putinstart:
         # if winner = putin, play ru_anthem.mp3
         # if winner = random, play random_anthem.mp3
     return
-    exit
