@@ -17,8 +17,8 @@ init:
                 # Some displayables we use.
                 self.paddle = Image("pong.png")
                 self.ball = Image("pong_ball.png")
-                self.player = Text(_("Player 1"), size=36)
-                self.thedonald = (_("Player 2"), size=36)
+                self.player = Text(_("Bernie Sanders"), size=36)
+                self.thedonald = (_("Theresa May"), size=36)
                 self.ctb = Text(_("Click to Begin"), size=36)
 
                 # The sizes of some of the images.
@@ -198,25 +198,17 @@ init:
 
 
 # Define characters
-define b = Character("Bernie Sanders")
-define m = Character("Theresa May")
-define t = Character("Donald Trump")
-define k = Character("Kim Jong-Un")
-define v = Character("Vladimir Putin")
+define p1 = Character("Bernie Sanders")
+define p2 = Character("Theresa May")
 
 
 # Define images
 image bg oval = "OO.jpg"
-image Sanders normal = "bs-normal.png"
-image Sanders blush = "bs-blush.png"
-image Trump normal = "dt-normal.png"
-# image Trump blush = "dt-blush.png"
-image May normal = "tm-normal.png"
-# image May blush = "tm-blush.png"
-# image Kim normal = "kju-normal.png"
-# image Kim blush = "kju-blush.png"
-# image Putin normal = "vp-normal.png"
-# image Putin blush = "vp-blush.png"
+image Bernie normal = "bs-normal.png"
+image Bernie blush = "bs-blush.png"
+image Theresa normal = "tm-normal.png"
+image Theresa blush = "tm-blush.png"
+
 
 
 # The game starts here.
