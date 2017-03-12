@@ -223,6 +223,7 @@ label start:
     with move
     show Theresa normal at center
     p2 "Ahaha! It is I, Theresa May."
+    with move
     show Theresa blush at right
     p2 "Britain will take back control of the USA and I will rule over you with an iron fist!"
     play music "us_anthem.mp3"
