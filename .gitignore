@@ -226,3 +226,5 @@ game/cache
 game/saves/*
 game/saves
 game/saves/*
+game/saves/persistent
+log.txt
