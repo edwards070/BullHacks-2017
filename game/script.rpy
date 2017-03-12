@@ -18,7 +18,7 @@ init:
                 self.paddle = Image("pong.png")
                 self.ball = Image("pong_ball.png")
                 self.player = Text(_("Bernie Sanders"), size=36)
-                self.thedonald = (_("Theresa May"), size=36)
+                self.thedonald = Text(_("Theresa May"), size=36)
                 self.ctb = Text(_("Click to Begin"), size=36)
 
                 # The sizes of some of the images.
@@ -214,87 +214,22 @@ image Theresa blush = "tm-blush.png"
 # The game starts here.
 label start:
     scene bg oval
-    "Choose your character:"
 
-    menu:
-        "Bernie Sanders":
-            self.player = Text(_("Bernie Sanders"), size=36)
-            self.thedonald = Text(_("Donald Trump"), size=36)
-            jump berniestart
-        "Theresa May":
-            self.player = Text(_("Theresa May"), size=36)
-            self.thedonald = Text(_("Kim Jong-Un"), size=36)
-            jump maystart
-        "Donald Trump":
-            self.player = Text(_("Donald Trump"), size=36)
-            self.thedonald = Text(_("Vladimir Putin"), size=36)
-            jump donaldstart
-        "Kim Jong-Un":
-            self.player = Text(_("Kim Jong-Un"), size=36)
-            self.thedonald = Text(_("Vladimir Putin"), size=36)
-            jump kimstart
-        "Vladimir Putin":
-            self.player = Text(_("Vladimir Putin"), size=36)
-            self.thedonald = Text(_("Theresa May"), size=36)
-            jump putinstart
-
-label donaldstart:
-    show Trump normal
+    show Bernie normal
     with fade
-    t "Make America Great Again"
-    show head normal at left
+    p1 "Ah, what a lovely day in the White House as President of the United States of America."
+    p1 "Nothing could possibly go wrong!"
+    show Bernie normal at left
     with move
-    show Sanders normal at right
+    show Theresa normal at center
+    p2 "Ahaha! It is I, Theresa May."
+    show Theresa blush at right
+    p2 "Britain will take back control of the USA and I will rule over you with an iron fist!"
+    play music "us_anthem.mp3"
     python:
         ui.add(PongDisplayable())
         winner = ui.interact(suppress_overlay=True, suppress_underlay=True)
-        # if winner = donald, play us_anthem.mp3
-        # if winner = random, play random_anthem.mp3
-    return
-
-label berniestart:
-    show Sanders normal
-    with fade
-    b "Ah, what a lovely day in the White House as President of the United States of America."
-    b "Nothing could possibly go wrong!"
-    show Sanders normal at left
-    with move
-    show May normal at right
-    m "Ahaha! It is I, Theresa May."
-    m "Britain will take back control of the USA and I will rule over you with an iron fist!"
-    python:
-        ui.add(PongDisplayable())
-        winner = ui.interact(suppress_overlay=True, suppress_underlay=True)
+    play sound "game_over.mp3"
         # if winner = bernie, play us_anthem.mp3
-        # if winner = random, play random_anthem.mp3
-    return
-
-label maystart:
-    show May normal
-    with fade
-    python:
-        ui.add(PongDisplayable())
-        winner = ui.interact(suppress_overlay=True, suppress_underlay=True)
-        # if winner = may, play uk_anthem.mp3
-        # if winner = random, play random_anthem.mp3
-    return
-
-label kimstart:
-    show May normal
-    with fade
-    python:
-        ui.add(PongDisplayable())
-        winner = ui.interact(suppress_overlay=True, suppress_underlay=True)
-        # if winner = kim, play nk_anthem.mp3
-        # if winner = random, play random_anthem.mp3
-    return
-
-label putinstart:
-    show May normal
-    with fade
-    python:
-        ui.add(PongDisplayable())
-        winner = ui.interact(suppress_overlay=True, suppress_underlay=True)
-        # if winner = putin, play ru_anthem.mp3
         # if winner = random, play random_anthem.mp3
     return

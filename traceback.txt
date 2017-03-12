@@ -1,21 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'bernie head transparent.jpg'>:
-  File "game/script.rpy", line 255, in script
-    with fade
-IOError: Couldn't find file 'bernie head transparent.jpg'.
+While loading <'Image' u'tm-normal.png'>:
+  File "game/script.rpy", line 225, in script
+    p2 "Ahaha! It is I, Theresa May."
+IOError: Couldn't find file 'tm-normal.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 255, in script
-    with fade
-  File "C:\Program Files (x86)\RenPy\renpy\ast.py", line 1275, in execute
-    renpy.exports.with_statement(trans, paired)
-  File "C:\Program Files (x86)\RenPy\renpy\exports.py", line 1381, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "C:\Program Files (x86)\RenPy\renpy\display\core.py", line 2096, in do_with
-    clear=clear)
+  File "game/script.rpy", line 225, in script
+    p2 "Ahaha! It is I, Theresa May."
+  File "C:\Program Files (x86)\RenPy\renpy\ast.py", line 613, in execute
+    renpy.exports.say(who, what, interact=self.interact)
+  File "C:\Program Files (x86)\RenPy\renpy\exports.py", line 1147, in say
+    who(what, interact=interact)
+  File "C:\Program Files (x86)\RenPy\renpy\character.py", line 877, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "C:\Program Files (x86)\RenPy\renpy\character.py", line 716, in do_display
+    **display_args)
+  File "C:\Program Files (x86)\RenPy\renpy\character.py", line 508, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Program Files (x86)\RenPy\renpy\ui.py", line 285, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Program Files (x86)\RenPy\renpy\display\core.py", line 2526, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
   File "C:\Program Files (x86)\RenPy\renpy\display\core.py", line 2883, in interact_core
@@ -28,18 +34,6 @@ Full traceback:
     rv = d.render(widtho, heighto, st, at)
   File "C:\Program Files (x86)\RenPy\renpy\display\layout.py", line 693, in render
     surf = render(child, width, height, cst, cat)
-  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Program Files (x86)\RenPy\renpy\display\transition.py", line 178, in render
-    renpy.display.render.render(self.transitions[-1], width, height, 0, 0)
-  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Program Files (x86)\RenPy\renpy\display\transition.py", line 361, in render
-    top = render(self.new_widget, width, height, st, at)
   File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
     cpdef render(d, object widtho, object heighto, double st, double at):
   File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
@@ -76,7 +70,7 @@ Full traceback:
     surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
   File "C:\Program Files (x86)\RenPy\renpy\loader.py", line 543, in load
     raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'bernie head transparent.jpg'.
+IOError: Couldn't find file 'tm-normal.png'.
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187
