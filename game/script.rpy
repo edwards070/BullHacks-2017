@@ -208,6 +208,7 @@ image Bernie normal = "bs-normal.png"
 image Bernie blush = "bs-blush.png"
 image Theresa normal = "tm-normal.png"
 image Theresa blush = "tm-blush.png"
+image winner = "winner.png"
 
 
 
@@ -215,22 +216,44 @@ image Theresa blush = "tm-blush.png"
 label start:
     scene bg oval
 
+    menu:
+        "Choose your character."
+        "Bernie Sanders":
+            jump Bernie
+        "Theresa May":
+            jump Theresa
+
+label Theresa:
+    show Theresa normal
+    with fade
+    "Unfortunately, you have chosen to play as Theresa May."
+    "We honestly didn't expect anyone to choose this option, so there's nothing here."
+    "Please feel free to go back and pick Bernie Sanders."
+    return
+
+label Bernie:
     show Bernie normal
     with fade
     p1 "Ah, what a lovely day in the White House as President of the United States of America."
     p1 "Nothing could possibly go wrong!"
     show Bernie normal at left
     with move
-    show Theresa normal at right
-    p2 "Ahaha! It is I, Theresa May."
-    with move
     show Theresa blush at right
-    p2 "Britain will take back control of the USA and I will rule over you with an iron fist!"
+    p2 "Ahaha! It is I, Theresa May."
+    p2 "I will steal your nuclear launch codes and destroy your filthy liberal society!"
+    hide Bernie normal
+    hide Theresa blush
+    window hide
     play music "us_anthem.mp3"
     python:
         ui.add(PongDisplayable())
         winner = ui.interact(suppress_overlay=True, suppress_underlay=True)
+    stop music
     play sound "game_over.mp3"
-        # if winner = bernie, play us_anthem.mp3
-        # if winner = random, play random_anthem.mp3
+    show winner
+    with fade
+    p1 "Bernie wins!"
+    show winner
+    with fade
+    p1 "Remember kids, Bernie Sanders always wins."
     return

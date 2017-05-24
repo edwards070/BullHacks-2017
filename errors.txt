@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 21: invalid syntax
-            self.thedonald = (_("Theresa May"), size=36)
-                                                     ^
-    
+File "game/script.rpy", line 221: choice menuitem expects a non-empty block.
+    "Bernie Sanders":
+                     ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
